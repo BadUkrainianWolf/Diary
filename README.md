@@ -9,3 +9,7 @@ If you want change password, you should contact me for more detailed information
 We ensure your data confidentiality and security.
 
 Enjoy your time using our app! :)
+
+
+
+P.S. Hi, for future NURE students ;)
