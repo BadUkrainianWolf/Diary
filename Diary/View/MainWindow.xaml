@@ -1,0 +1,106 @@
+﻿<Window x:Class="Diary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diary"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1025">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="logo.jpg"></ImageBrush>
+        </Grid.Background>
+        <StackPanel Orientation="Vertical">
+            <Border MinWidth="300" Margin="20" Background="white" VerticalAlignment="Center" Padding="10" MaxWidth="550" CornerRadius="20">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" Color="#504361" ShadowDepth="0"/>
+                </Border.Effect>
+                <TextBlock Text="Welcome to Diary!" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+
+            </Border>
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="addTask" Click="addTask_Click" Content="Add task" HorizontalAlignment="Left" Margin="50 5 0 5"/>
+                                    <Button x:Name="viewAll" Click="viewAll_Click" Content="View all tasks" HorizontalAlignment="Left" Margin="50 5 0 0"/>
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border MinWidth="200" Margin="30 5 0 5" Background="white" VerticalAlignment="Center" Padding="10" MaxWidth="200" CornerRadius="10">
+                                        <Border.Effect>
+                                            <DropShadowEffect BlurRadius="30" Color="#504361" ShadowDepth="0"/>
+                                        </Border.Effect>
+                                        <TextBlock x:Name="UpdateTime" HorizontalAlignment="Center" FontSize="13"/>
+
+                                    </Border>
+                                    <Button x:Name="update" Click="update_Click" Content="Update" HorizontalAlignment="Left" Margin="10"/>
+                                </StackPanel>
+                            </Grid>
+                            <Border MinWidth="350" Margin="15" Background="white" HorizontalAlignment="Left" Padding="30" MaxWidth="350" CornerRadius="20">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="30" Color="#504361" ShadowDepth="0"/>
+                                </Border.Effect>
+
+                                <Calendar x:Name="calendar1" FirstDayOfWeek="Monday"
+        SelectedDatesChanged="calendar1_SelectedDatesChanged" MinWidth="350" MaxWidth="550">
+                                    <Calendar.BlackoutDates>
+                                        <CalendarDateRange Start="10/5/2013" End="10/8/2013"></CalendarDateRange>
+                                    </Calendar.BlackoutDates>
+                                </Calendar>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border MinWidth="300" Margin="5" Background="white" HorizontalAlignment="Left" Padding="10" MaxWidth="300" CornerRadius="20" MinHeight="300" MaxHeight="300">
+                                        <Border.Effect>
+                                            <DropShadowEffect BlurRadius="30" Color="#504361" ShadowDepth="0"/>
+                                        </Border.Effect>
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                            <StackPanel>
+                                                <TextBlock x:Name="text" HorizontalAlignment="Center" FontSize="20"/>
+                                                <ListView x:Name="listOfTasksToday" Margin="10"/>
+                                            </StackPanel>
+                                        </ScrollViewer>
+                                    </Border>
+                                    <Border MinWidth="300" Margin="5" Background="white" HorizontalAlignment="Right" Padding="10" MaxWidth="300" CornerRadius="20" MinHeight="300" MaxHeight="300">
+                                        <Border.Effect>
+                                            <DropShadowEffect BlurRadius="30" Color="#504361" ShadowDepth="0"/>
+                                        </Border.Effect>
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                            <StackPanel>
+                                                <TextBlock x:Name="NextText" HorizontalAlignment="Center" FontSize="20"/>
+                                                <ListView x:Name="listOfTasksNext" Margin="10"/>
+
+                                            </StackPanel>
+                                        </ScrollViewer>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                            <Border MinWidth="400" Margin="10" Background="white" VerticalAlignment="Bottom" Padding="10" MaxWidth="550" CornerRadius="20" MinHeight ="190" MaxHeight ="190">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="30" Color="#504361" ShadowDepth="0"/>
+                                </Border.Effect>
+                                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <StackPanel>
+                                        <TextBlock Text="Ended time" HorizontalAlignment="Center" FontSize="25"/>
+                                        <ListView x:Name="listOfTasksEnded" MouseDoubleClick="listOfTasksEnded_MouseDoubleClick" Margin="10"/>
+                                        <Button x:Name="Finish" Click="Finish_Click" Content="Finish all" HorizontalAlignment="Left" Margin="50 5 0 5"/>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </Border>
+                        </StackPanel>
+                        
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            
+        </StackPanel>
+    </Grid>
+</Window>

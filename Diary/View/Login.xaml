@@ -1,0 +1,28 @@
+﻿<Window x:Class="Diary.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diary"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Login" Height="626" Width="626">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="logo.jpg"></ImageBrush>
+        </Grid.Background>
+        <Border MinWidth="400" Margin="15" Background="white" Opacity="0.7" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="#504361" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Login" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+
+                <TextBox x:Name="textBoxName" materialDesign:HintAssist.Hint="Enter name" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <PasswordBox x:Name="textBoxPass" materialDesign:HintAssist.Hint="Enter pass" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                
+                <Button Content="Confirm" Margin="0 20" Click="Button_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
