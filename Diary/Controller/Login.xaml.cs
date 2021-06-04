@@ -19,8 +19,8 @@ namespace Diary
     /// </summary>
     public partial class Login : Window
     {
-        string actualPass = "1";
-        string actualName = "Mariia";
+        string actualPass = "pass12345";
+        string actualName = "User";
         public Login()
         {
             InitializeComponent();
